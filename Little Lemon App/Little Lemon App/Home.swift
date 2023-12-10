@@ -11,6 +11,7 @@ struct Home: View {
     var body: some View {
         TabView {
             Menu()
+                .environment(\.managedObjectContext, PersistanceController.shared.container.viewContext)
                 .tabItem({
                     Label("Menu", systemImage: "menucard")
                 })
